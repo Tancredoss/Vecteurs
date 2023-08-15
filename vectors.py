@@ -22,6 +22,7 @@ class Vect3D():
     def __neg__(self):
         return Vect3D(-self.dx,-self.dy,-self.dz)
     def __getitem__(self, coord):
+        """Type Vector[x], Vector[y], Vector[z] to access the coordinates"""
         if coord == "x" or coord == 0:
             return self.dx
         elif coord == "y" or coord == 1:
@@ -87,6 +88,7 @@ class Vect2D():
     def __neg__(self):
         return Vect2D(-self.dx,-self.dy)
     def __getitem__(self, coord):
+        """Type Vector[x], Vector[y], Vector[z] to access the coordinates"""
         if coord == "x" or coord == 0:
             return self.dx
         elif coord == "y" or coord == 1:
@@ -127,10 +129,10 @@ class Vect2D():
         return sqrt(self.dx**2 + self.dy**2)
 
 def norme(vecteur):
-    """Renvoie la norme d'un object de type Vect"""
+    """Return the Norm of a given vector"""
     return vecteur.norme()
 def dot(vect1,vect2):
-    """Renvoie le produit scalaire de deux vecteurs"""
+    """Return the dot product of the given vectors"""
     try :
         return vect1.dx*vect2.dx + vect1.dy*vect2.dy + vect1.dz*vect2.dz
     except :
@@ -138,11 +140,11 @@ def dot(vect1,vect2):
         
 
 def null3D():
-    """Renvoie le vecteur nul à 3 dimensions"""
+    """Return the Zero Vector in 3 dimensions"""
     return Vect3D(0,0,0)
 
 def null2D():
-    """Renvoie le vecteur nul à deux dimensions"""
+    """Return the Zero Vector in 2 dimensions"""
     return Vect2D(0,0)
 
 
